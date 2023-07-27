@@ -1,8 +1,8 @@
-# What-Are-You-Wearing-
+# What-Are-You-Wearing
 
-Age Predictor Model
+Clothing Classification Model
 
-This model is used to predict peoples ages based on their face. It is trained on an imagenet Resnet-18 model using transfer learning. The idea is that if the model overpredicts your age, you might have some sort of skin problems.
+This model is used to classify what people are wearing to help accurately enforce dress codes. It is trained on an imagenet Resnet-18 model using transfer learning.
 
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/5f46ba8b-5935-40b3-8c5a-dde27be4bd7c)
 
@@ -19,9 +19,66 @@ This model is used to predict peoples ages based on their face. It is trained on
 
 
 ## The Algorithm
-The algorithim is used by recording a video on a Logitech webcam - supported by Jetson nano. It uses a 2GB Jetson Nano, and so it uses it a preflashed SD card flashed from the NVIDIA webpage. It uses a facenet to find a persons face in the image, then it crops the image to just hold the face. It then sends the face to the transfer learning model. The transfer model then predicts your age. It will try to guess your age to the best of its abilities. Then it will print out the age is it is confident. It is up to the user to interepret the information.
-Note: I ran this model on a realivly low epoch with information that was askew. The pretrained model is quite inacurrate.
+This project uses a resnet18 model that was retrained with 4 different data sets. Each data set contained a different kind of clothing. The algorithm uses imagenet to identify the article of clothing. I ran this model with 500 epochs so the model is mostly accurate but can still make mistakes. 
+
 ## Running this project
+1. Download the jetson-inference container from github to a jetson-nano: https://github.com/dusty-nv/jetson-inference
+Download the jetson-inference container from github to a jetson-nano: https://github.com/dusty-nv/jetson-inference
+
+Change directories into jetson-inference/python/training/classification/data
+
+Create a directory called "clothes"
+
+Download the dataset at https://github.com/alexeygrigorev/clothing-dataset-small.git 
+
+delete dress, longsleeve, outwear, shorts, skirt, t-shirt from the test, train, and val folders. 
+
+Make a .txt file called "labels.txt" in the "clothes" directory and write down the following on a separate line (in exactly that order)
+
+hat, pants, shoes, shirt
+
+Make a new directory called "clothes" in jetson-inference/python/training/classification/models
+Execution
+
+Change directories to jetson-inference
+
+Type and run ./docker/run.sh in the terminal
+
+Then change directories to jetson-inference/python/training/classification
+
+Now train the model by running this command in the terminal python3 train.py --model-dir=models/clothes data/clothes
+
+Note: Depending on how many epochs you run this might take a while 
+
+Once done, export the model by running this script
+python3 onnx_export.py --model-dir=models/clothes
+
+If you are in the docker container, exit it by pressing ctrl+d or typing 'exit'
+
+Change directories to jetson-inference/python/training/classification
+
+In the terminal enter in NET=models/clothes and DATASET=data/clothes
+
+Then enter in the place of '...' hat, pants, shirt or shoes
+
+imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/.../malignant8.png output.jpg
+
+If you look in your classification directory there will be a file called output.jpg (or whatever you named the output to be)
+
+Display the file to see what the article of clothing is 
+
+View a video explanation here
+
+
+
+
+
+
+
+
+
+
+
 
 1. Connect to your Jetson Nano via VSCODE. 
 2. Connect your Webcam (preferably logitech)

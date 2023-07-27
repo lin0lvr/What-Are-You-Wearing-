@@ -10,6 +10,7 @@ This model is used to predict peoples ages based on their face. It is trained on
 
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/6a2834f7-4be5-4e9a-8947-76ccff70f6d9)
 
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/8c72ba45-a0b2-45d1-85fd-8318168ee4f6)
 
 
 

@@ -22,7 +22,6 @@ This model is used to classify what people are wearing to help accurately enforc
 This project uses a resnet18 model that was retrained with 4 different data sets. Each data set contained a different kind of clothing. The algorithm uses imagenet to identify the article of clothing. I ran this model with 500 epochs so the model is mostly accurate but can still make mistakes. 
 
 ## Running this project
-1. Download the jetson-inference container from github to a jetson-nano: https://github.com/dusty-nv/jetson-inference
 Download the jetson-inference container from github to a jetson-nano: https://github.com/dusty-nv/jetson-inference
 
 Change directories into jetson-inference/python/training/classification/data

@@ -4,7 +4,13 @@ Age Predictor Model
 
 This model is used to predict peoples ages based on their face. It is trained on an imagenet Resnet-18 model using transfer learning. The idea is that if the model overpredicts your age, you might have some sort of skin problems.
 
-![A computer analyzes a face.](https://imgur.com/HeyVfsW)
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/5f46ba8b-5935-40b3-8c5a-dde27be4bd7c)
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/3eae6ae7-a7c0-4fcb-9c68-994f7f65246c)
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/6a2834f7-4be5-4e9a-8947-76ccff70f6d9)
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/f490bc4e-a969-4e83-bd8e-21379839dec5)
+
+
+
 
 ## The Algorithm
 The algorithim is used by recording a video on a Logitech webcam - supported by Jetson nano. It uses a 2GB Jetson Nano, and so it uses it a preflashed SD card flashed from the NVIDIA webpage. It uses a facenet to find a persons face in the image, then it crops the image to just hold the face. It then sends the face to the transfer learning model. The transfer model then predicts your age. It will try to guess your age to the best of its abilities. Then it will print out the age is it is confident. It is up to the user to interepret the information.

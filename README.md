@@ -5,9 +5,12 @@ Age Predictor Model
 This model is used to predict peoples ages based on their face. It is trained on an imagenet Resnet-18 model using transfer learning. The idea is that if the model overpredicts your age, you might have some sort of skin problems.
 
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/5f46ba8b-5935-40b3-8c5a-dde27be4bd7c)
+
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/3eae6ae7-a7c0-4fcb-9c68-994f7f65246c)
+
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/6a2834f7-4be5-4e9a-8947-76ccff70f6d9)
-![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/f490bc4e-a969-4e83-bd8e-21379839dec5)
+
+
 
 
 

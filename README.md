@@ -8,9 +8,11 @@ This model is used to predict peoples ages based on their face. It is trained on
 
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/3eae6ae7-a7c0-4fcb-9c68-994f7f65246c)
 
+![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/9b70b3bf-1520-4453-aead-5e4fb85ec9f3)
+
 ![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/6a2834f7-4be5-4e9a-8947-76ccff70f6d9)
 
-![image](https://github.com/lin0lvr/What-Are-You-Wearing-/assets/140644065/9b70b3bf-1520-4453-aead-5e4fb85ec9f3)
+
 
 
 

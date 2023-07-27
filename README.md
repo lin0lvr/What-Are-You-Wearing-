@@ -24,13 +24,13 @@ This project uses a resnet18 model that was retrained with 4 different data sets
 ## Running this project
 Download the jetson-inference container from github to a jetson-nano: https://github.com/dusty-nv/jetson-inference
 
-Change directories into jetson-inference/python/training/classification/data
+Change directories into `jetson-inference/python/training/classification/data`
 
 Create a directory called "clothes"
 
 Download the dataset at https://github.com/alexeygrigorev/clothing-dataset-small.git 
 
-delete dress, longsleeve, outwear, shorts, skirt, t-shirt from the test, train, and val folders. 
+delete `dress` `longsleeve` `outwear` `shorts` `skirt` `t-shirt` from the test, train, and val folders. 
 
 Make a .txt file called "labels.txt" in the "clothes" directory and write down the following on a separate line (in exactly that order)
 
@@ -41,26 +41,26 @@ Execution
 
 Change directories to jetson-inference
 
-Type and run ./docker/run.sh in the terminal
+Type and run `./docker/run.sh` in the terminal
 
-Then change directories to jetson-inference/python/training/classification
+Then change directories to `jetson-inference/python/training/classification`
 
-Now train the model by running this command in the terminal python3 train.py --model-dir=models/clothes data/clothes
+Now train the model by running this command in the terminal `python3 train.py --model-dir=models/clothes data/clothes`
 
 Note: Depending on how many epochs you run this might take a while 
 
 Once done, export the model by running this script
-python3 onnx_export.py --model-dir=models/clothes
+`python3 onnx_export.py --model-dir=models/clothes`
 
 If you are in the docker container, exit it by pressing ctrl+d or typing 'exit'
 
-Change directories to jetson-inference/python/training/classification
+Change directories to `jetson-inference/python/training/classification`
 
-In the terminal enter in NET=models/clothes and DATASET=data/clothes
+In the terminal enter in `NET=models/clothes` and `DATASET=data/clothes`
 
 Then enter in the place of '...' hat, pants, shirt or shoes
 
-imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/.../malignant8.png output.jpg
+`imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/.../malignant8.png output.jpg`
 
 If you look in your classification directory there will be a file called output.jpg (or whatever you named the output to be)
 

@@ -66,4 +66,4 @@ If you look in your classification directory there will be a file called output.
 
 Display the file to see what the article of clothing is 
 
-View a video explanation here
+[View a video explanation here](https://youtu.be/llIikrwvE4s)
